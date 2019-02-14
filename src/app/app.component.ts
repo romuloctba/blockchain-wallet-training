@@ -8,24 +8,20 @@ import { BlockchainService, Blockchain, Transaction } from 'projects/blockchain/
 })
 export class AppComponent {
   title = 'blockchain-wallet-training';
+  public imageTitle = 'title da imagem';
   public blockchain: Blockchain;
+  public isValid: boolean;
 
   constructor(
     @Inject(BlockchainService)
       private blockchainService: BlockchainService
     ) {
       this.blockchain = this.blockchainService.blockchain;
-  }
+      this.isValid = this.blockchain.isValidChain(this.blockchain);
+    }
 
   onMine(): boolean {
     return this.blockchainService.mine();
   }
 
-  onSend() {
-    const blockIndex = this.blockchainService.addTransaction(
-      new Transaction(20, 'eu', 'vc')
-    );
-
-    alert(`Sua transacao sera incluida no bloco #` + blockIndex);
-  }
 }

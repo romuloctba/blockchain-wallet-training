@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Block, BlockchainService } from 'projects/blockchain/src/public_api';
+import { SendTransactionComponent } from './send-transaction/send-transaction.component';
+import { BalanceComponent } from './balance/balance.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BlockComponent } from './block/block.component';
 
 const GenesisProvider = () => {
   return new Block(1, 12312, [], 'GENESIS', '0ae1234', '00');
@@ -11,7 +15,11 @@ const GenesisProvider = () => {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SendTransactionComponent,
+    BalanceComponent,
+    DashboardComponent,
+    BlockComponent
   ],
   imports: [
     BrowserModule,
