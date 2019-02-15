@@ -2,13 +2,13 @@
     <h2 [ngClass]="{
       'valid': isValid,
       'invalid': !isValid
-    }">BlockChain <button (click)="onMine()">Mine</button> </h2>
+    }">BlockChain </h2>
+    <button tooltip="Minerar novo Bloco" (click)="onMine()">Mine</button>
   <div>
     {{blockchain.pendingTransactions.length}} Pending Transactions
   </div>
-  <nav>
+  <nav class="navbar navbar-default">
     <button [routerLink]="['send-transaction']">Send Transaction</button>
-    <button [routerLink]="['balance']">Balance</button>
     <button [routerLink]="['dashboard']">Dashboard</button>
   </nav>
 </header>

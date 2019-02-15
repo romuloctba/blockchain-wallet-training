@@ -1,3 +1,6 @@
+<app-balance
+  [chain]="blockchain.chain"
+></app-balance>
 <div id="dashboard-wrapper">
   <div *ngFor="let block of blockchain.chain">
     <app-block [block]="block"></app-block>
